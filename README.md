@@ -1,3 +1,12 @@
+# Vue Remark issue reproduction
+## Relevant files/ directories
+Relevant files and directories listed below:
+- [layouts](./src/layouts)
+- [Index.md](./post/index.md)
+- [Post.md](./post/post.md)
+- [Gridsome Config](./gridsome.config.js)
+
+
 # Default starter for Gridsome
 
 This is the project you get when you run `gridsome create new-project`.
