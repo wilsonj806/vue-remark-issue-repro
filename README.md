@@ -37,7 +37,7 @@ Minimal reproduction in this [repository](https://github.com/wilsonj806/vue-rema
 Gridsome should build the app successfully every time `npm run develop` is ran.
 
 ### Actual Result
-Gridsome crashes with the below error:
+Gridsome v0.7.0 crashes with the below error(v0.7.12 crashes with a similar stack trace, but with a couple of different names):
 ```
 TypeError: Cannot set property 'extensions' of undefined
     at processInferredFields (E:\SOFTWARE-DEV\PRs\vue-remark-issue-repro\node_modules\gridsome\lib\graphql\nodes\index.js:138:26)
@@ -52,41 +52,7 @@ TypeError: Cannot set property 'extensions' of undefined
 Also tried doing some debugging and if I `console.log(fieldDefs)` in "gridsome/lib/graphql/nodes/index.js" line 107 I get the below:
 ```js
 {
-  id: {
-    key: 'id',
-    fieldName: 'id',
-    extensions: { isInferred: true },
-    value: 'e8a30aafa705a3151839a8aaf62c1e59'
-  },
-  path: {
-    key: 'path',
-    fieldName: 'path',
-    extensions: { isInferred: true },
-    value: '/post/'
-  },
-  fileInfo: {
-    key: 'fileInfo',
-    fieldName: 'fileInfo',
-    extensions: { isInferred: true },
-    value: {
-      extension: [Object],
-      directory: [Object],
-      path: [Object],
-      name: [Object]
-    }
-  },
-  content: {
-    key: 'content',
-    fieldName: 'content',
-    extensions: { isInferred: true },
-    value: '\n# Lorem ipsum'
-  },
-  title: {
-    key: 'title',
-    fieldName: 'title',
-    extensions: { isInferred: true },
-    value: 'Init post'
-  },
+  //... other fields that build without issues(path, id, content, etc)
   layout: {
     key: 'layout',
     fieldName: 'layout',
